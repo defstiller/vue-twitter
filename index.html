@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Twitter</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <h1> This app was written with a help of a tutorial, and does not reflect my knowledge of Vue.js, please see other applications.</h1>
+    <div id="app">
+    <form @submit="onSubmit">
+        <textarea v-model="item" 
+        required 
+        placeholder="Tweet something!"></textarea>
+    </br>
+        <button type="submit">Submit</button>
+    </form>
+    <ul>
+        <li v-for="(tweet, index) in items" key="tweet"> <!-- v-for is command to create new tweet from items, index is part of key      key - ensures that every new tweet is brand new, not copied-->
+            <img style="width:30px; height: 30px;":src="tweet.avatar">
+            <span>{{tweet.date}}</span>
+            <div>{{tweet.body}}</div>
+        </li>
+    </ul>
+    </div>
+    <script src="./resources/js/app.js"></script>
+</body>
+</html>
